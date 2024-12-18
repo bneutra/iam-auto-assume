@@ -22,6 +22,7 @@ Don't use this in prod. This is for testing purposes only. It doesn't revert the
 Example python script:
 ```
 import sys
+import boto
 from iam_auto_assume import auto_assume
 
 role_name = sys.argv[1]
