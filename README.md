@@ -7,7 +7,7 @@ IAM policies can be very subtle, fragile and frustrating. You might find yoursel
 - waiting to see if the resource using the policy is happy or sad
 - rinse and repeat
 
-Don't do that. This python help function enables you to easily assume into the target role from your laptop and test access iteratively and quickly.
+Don't do that. This python helper function enables you to easily assume into the target role from your laptop and test access iteratively and quickly.
 
 ## Usage
 `auto_assume(role_name)`
@@ -15,9 +15,9 @@ Don't do that. This python help function enables you to easily assume into the t
 This function automatically updates the trust policy of a specified IAM role
 to allow the current role to assume it. It then assumes the specified role and returns the 
 temporary credentials which you can use to test access from your local machine
-while you iteratively modify the IAM policies.
+while you iteratively modify the IAM policies (e.g. in the console)
 
-Don't use in prod. This is for testing purposes only. It doesn't revert the trust policy change.
+Don't use this in prod. This is for testing purposes only. It doesn't revert the trust policy change.
 
 Example python script:
 ```
