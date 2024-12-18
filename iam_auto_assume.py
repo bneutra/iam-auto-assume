@@ -27,6 +27,7 @@ def test_access():
 import boto3
 import botocore.exceptions
 import json
+import time
 
 
 def get_current_account_id():
@@ -106,7 +107,9 @@ def update_trust_policy(target_role_name, current_role_arn):
             PolicyDocument=json.dumps(trust_policy)
         )
         print(f"Updated the trust policy for role {target_role_name} to allow {current_role_arn} to assume it.")
-        print("It may take up to 10 seconds to take effect.")
+        print("Waiting 10s for the trust policy update to propagate...")
+        # kind of hacky but I found if you try to early it caches the failed response
+        time.sleep(10)
 
     except Exception as e:
         print(f"An error occurred: {str(e)}")
