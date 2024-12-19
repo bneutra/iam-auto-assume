@@ -7,7 +7,7 @@ IAM policies can be very subtle, fragile and frustrating. You might find yoursel
 - waiting to see if the resource using the policy is happy or sad
 - rinse and repeat
 
-Don't do that. This python helper function enables you to easily assume into the target role from your laptop and test access iteratively and quickly.
+This python helper function enables you to easily assume into the target role from your laptop while you're tweaking policies and testing IAM access iteratively and quickly.
 
 ## Usage
 `auto_assume(role_name)`
